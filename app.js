@@ -1,6 +1,6 @@
 /* employee object  constructor   */
 "use strict";
-//hitest
+
 const webEmployee = [];
 
 function Employee(id, name, department, level, image, salary) {
@@ -103,12 +103,4 @@ Employee.prototype.render = function () {
 salary1();
 
 
-
-
- let obj = {
-    firstName: 'Ellie',
-     lastName: 'jon',
-     age: 67,
-     hobby: 'Gaming and Sleeping'
- }
 
