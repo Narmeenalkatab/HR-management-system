@@ -10,6 +10,7 @@ function Employee(id, name, department, level, image, salary) {
   this.level = level;
   this.image = image;
   this.salary = 0;
+  // this.netSalary=this.salary;
   webEmployee.push(this);
 }
 
@@ -73,11 +74,7 @@ Employee.prototype.netSalary = function () {
   if (this.level == "Senior") {
     let net = Math.floor(Math.random() * (2000 - 1500)) + 1500;
     this.salary = net * (1 - 0.075);
-    
-  }
-  
-  
-  else if (this.level == "Mid-Senior") {
+  } else if (this.level == "Mid-Senior") {
     let net = Math.floor(Math.random() * (1500 - 1000)) + 1000;
     this.salary = net * (1 - 0.075);
   } else if (this.level == "Junior") {
@@ -88,96 +85,99 @@ Employee.prototype.netSalary = function () {
   return this.salary;
 };
 
-function salary1() {
-  for (let i = 0; i < webEmployee.length; i++) {
-    webEmployee[i].netSalary();
-   
-  }
-}
-
-let emSalary = salary1();
-
 function employeeId() {
-  for(let i = 0; i < webEmployee.length; i++){
-
+  for (let i = 0; i < webEmployee.length; i++) {
     let randomId = Math.floor(Math.random() * 9000 + 1000);
-this.id= randomId;
-return this.id;
-
+    this.id = randomId;
+    return this.id;
   }
 }
 
-// let Eid = employeeId();
-
-// console.log(Eid);
 ////////////////////////////////////////////////////
 
 let form = document.getElementById("Einformatiom");
 
 form.addEventListener("submit", clickGet);
 function clickGet() {
- 
-
   const formData = new FormData(form);
-  
+
   const output = document.getElementById("output");
-  
-  let nameFull= document.getElementById("Ename");
-  document.write("Name: "+ nameFull.value );
 
-  // const input = document.getElementById("input");
-  // document.write("Name: "+input.value );
-  
+  let nameFull = document.getElementById("Ename");
+  document.write("Name: " + nameFull.value);
 
-
-
+  // let personalImg1= document.getElementById("Eimage");
+  // document.write("Image URL: "+ personalImg1.value );
 
   for (const [key, value] of formData) {
-   document.write(output.textContent = `  ${key}: ${value}  `) ;
-
+    document.write((output.textContent = `  ${key}: ${value}  `));
   }
-  
-////////////////////////////////////
 
+  //   let cardIn= document.createElement("div");
+  //   document.body.appendChild(cardIn);
 
+  //   cardIn.style.backgroundColor= "rgba(65, 11, 46, 0.19)";
+  //   cardIn.style.display='inline-block'
+  //   cardIn.style.width= '200px';
+  //   cardIn.style.borderColor='black';
+  //   cardIn.style.margin='30px'
+  //   cardIn.style.padding='10px'
+  //   cardIn.style.display='inline-block';
+  //   cardIn.style.borderRadius='5px';
+
+  //   let cardimg1 = document.createElement("img");
+  //   let cardname1 = document.createElement("p");
+  //   let cardL1 = document.createElement("p");
+  //   let cardepartment1 = document.createElement("p");
+
+  //   let personalImg= document.getElementById("Eimage");
+  //   let nameFull= document.getElementById("Ename");
+  //   let departmentSelect= document.getElementById("Edepartment");
+  //   let leveltSelect= document.getElementById("Elevel");
+
+  //   cardimg1.src= personalImg.value ;
+  //   cardname1.textContent= nameFull.value;
+  //   cardL1.textContent= leveltSelect.value;
+  //   cardepartment1.textContent= departmentSelect.value;
+
+  // cardIn.appendChild(cardimg1);
+  // cardIn.appendChild(cardname1);
+  // cardIn.appendChild(cardL1);
+  // cardIn.appendChild(cardepartment1);
 }
 
 let container = document.createElement("div");
 document.body.appendChild(container);
 
-let h1El= document.createElement("h1") ;
-h1El.textContent="Employee Cards";
+let h1El = document.createElement("h1");
+h1El.textContent = "Employee Cards";
 container.appendChild(h1El);
-h1El.style.paddingTop='20px';
-h1El.style.color='rgba(24, 32, 65, 0.5)';
+h1El.style.paddingTop = "20px";
+h1El.style.color = "rgba(24, 32, 65, 0.5)";
 
-container.style.backgroundImage='url(./assest/bbck.jpg)';
-container.style.width='800px';
-container.style.marginLeft='70px';
-container.style.marginTop='-300px';
-container.style.marginBottom='100PX';
-container.style.textAlign='center';
-container.style.display='inline-block';
-container.style.borderRadius='20px';
-
-
+container.style.backgroundImage = "url(./assest/bbck.jpg)";
+container.style.width = "800px";
+container.style.marginLeft = "70px";
+container.style.marginTop = "-300px";
+container.style.marginBottom = "100PX";
+container.style.textAlign = "center";
+container.style.display = "inline-block";
+container.style.borderRadius = "20px";
 
 //Card function
 Employee.prototype.render = function () {
   let card = document.createElement("div");
 
+  card.style.backgroundColor = "rgba(65, 11, 46, 0.19)";
+  card.style.display = "inline-block";
+  card.style.width = "200px";
 
-
-card.style.backgroundColor= "rgba(65, 11, 46, 0.19)";
-card.style.display='inline-block'
-card.style.width= '200px'; 
-
-card.style.borderColor='black';
-card.style.margin='30px'
-card.style.padding='10px'
-card.style.display='inline-block';
-card.style.borderRadius='5px';
-card.style.fontFamily=''
+  card.style.borderColor = "black";
+  card.style.margin = "30px";
+  card.style.padding = "10px";
+  card.style.display = "inline-block";
+  card.style.borderRadius = "5px";
+  card.style.fontFamily = "";
 
   let cardimg = document.createElement("img");
   let cardname = document.createElement("p");
@@ -191,7 +191,7 @@ card.style.fontFamily=''
   cardid.textContent = "Id:" + this.id;
   cardepartment.textContent = "Department: " + this.department;
   cardlevel.textContent = "Level: " + this.level;
-  cardsalary.textContent = "Salary: " + emSalary;
+  cardsalary.textContent = "Salary: " + this.netSalary();
 
   card.appendChild(cardimg);
 
@@ -204,15 +204,10 @@ card.style.fontFamily=''
   card.appendChild(cardsalary);
 
   container.appendChild(card);
-
-  
-
 };
-
 
 Ghazi.render();
 Safi.render();
-
 
 Omar.render();
 Rana.render();
@@ -221,4 +216,3 @@ Hadi.render();
 Lana.render();
 
 Tamara.render();
-

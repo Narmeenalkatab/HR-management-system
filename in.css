@@ -49,12 +49,13 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
-#Ename , #Edepartment, #Elevel,#myFile{
-    background-color: rgba(83, 16, 80, 0.288);
- color:rgb(22, 20, 20);
+#Ename , #Edepartment, #Elevel, #Eimage{
+    background-color: rgba(236, 177, 233, 0.651);
+ color:rgb(48, 112, 40);
  font-size: 15px;
  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
+
 
 
 #vline{
