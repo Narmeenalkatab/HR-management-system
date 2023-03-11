@@ -101,3 +101,32 @@ Employee.prototype.render = function () {
 };
 
 salary1();
+
+
+
+
+ let obj = {
+    firstName: 'Ellie',
+     lastName: 'jon',
+     age: 67,
+     hobby: 'Gaming and Sleeping'
+ }
+//
+//  Output: "my name is Ellie Jon I am 67 YO, and I love Gaming and Sleeping."
+
+//  Note that:
+//  1- The text template is "my name is ** ** I am ** YO, and I love **."
+//  2- The first letters of the firstName and lastName should be capital letter
+
+const objLat = (obj) => {
+  this.firstName=firstName;
+  this.lastName=lastName;
+  this.age=age;
+  this.hobby=hobby;
+  this.newFun= function(Output){
+    
+  }
+  
+  // write your code here
+};
+
