@@ -146,6 +146,7 @@ function clickGet() {
   // cardIn.appendChild(cardepartment1);
 }
 
+
 let container = document.createElement("div");
 document.body.appendChild(container);
 
