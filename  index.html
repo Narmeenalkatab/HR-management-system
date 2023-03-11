@@ -5,24 +5,115 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
+
+    
+
     <header>
+      
       <nav>
-        <a href="./accounting.html">Accounting</a>
+<div id="links">
+  <a id="hm" href="./ index.html">  Home  </a>
+  <a id="ac" href="./accounting.html"> Accounting      </a> </div>
+<hr>
+        
       </nav>
     </header>
 
-    <main> </main>
+    <main>
+
+      <div id="vline"> 
+      </div>
+
+
+     
+      
+      <form id="Einformatiom">
+        
+        <h3 id="etitle" >   Employee Informatiom</h3>
+<br>
+<br>
+          <lable class="textLable" for="Ename"> Name </lable> 
+          <input type="text" id="Ename" value="" placeholder="Full Name" />
+          
+
+          <lable for="Edepartment"> Department </lable>  
+
+          <select name="Department" id="Edepartment" form="Einformatiom">
+            <option value="Administration">Administration</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Development">Development</option>
+            <option value="Finance">Finance</option>
+          </select>
+          <br>
+        </br>
+
+
+
+
+          <lable for="Elevel"> Level </lable> 
+        
+          <select name="Level" id="Elevel" form="Einformatiom">
+            <option value="Junior">Junior</option>
+            <option value="Mid-Senior">Mid-Senior</option>
+            <option value="Senior">Senior</option>
+            
+          </select> </br>
+
+            <label></label> <br>
+
+            <fieldset id="EimgF">      
+<legend> Upload your image</legend>
+
+              <input type="file" id="myFile" name="filename"      accept="image/jpeg, image/png, image/jpg"     >
+              <output ></output>
+            </fieldset>
+        
+<br>
+        <button id="submit" type="submit">submit</button>
+        </br>
+
+<br>
+
+
+      
+      </form>
+      
+      <output id="output"></output>
+
+
+<aside>
+
+
+<p>,,<br>A dream <br> doesn’t become<br> reality through magic,<br> 
+  
+  it takes <br> sweat, determination <br> and <br>hard work.</p>
+  <p style="font-size: small;"> –  Jonathan Sack</p>
+</aside>
+
+
+
+
+    </main>
+
+
+    <div id="vline2"> 
+    </div>
+    
+
+
 
     <script src="./app.js"></script>
 
     <footer>
-      <a href="https://web.whatsapp.com/" target="_blank">Whatsapp</a>
+      <hr id="footline">
+      <a id="whatss1" href="https://web.whatsapp.com/" target="_blank">  <img src="./assest/whatsapp.png" alt=""></a>
 
-      <a href="https://twitter.com/" target="_blank">Twitter</a>
-
-      <p>&copy; NARMEEN</p>
+      <a id="twitter1" href="https://twitter.com/" target="_blank"><img src="./assest/twitter.png"></a>
+<p> <img src="./assest/phone.jpg"> +1112233447 </p>
+      <p id="coptright">&copy; NARMEEN</p>
     </footer>
   </body>
 </html>
