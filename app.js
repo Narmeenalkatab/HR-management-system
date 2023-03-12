@@ -110,22 +110,10 @@ function clickGet() {
 
 
 
-  const formData = new Employee( );
+  const formData = new Employee( employeeId(),nameFull ,departmentS, levelS ,imageE   );
 
-  // const output = document.getElementById("output");
-
- 
-let 
-
-//  console.log("Name: " + nameFull);
-
-  // let personalImg1= document.getElementById("Eimage");
-  // document.write("Image URL: "+ personalImg1.value );
-
-  // for (const [key, value] of formData) {
-  //   document.write((output.textContent = `  ${key}: ${value}  `));
-  // }
-
+  
+return  formData ;
  
 }
 
@@ -200,3 +188,4 @@ Hadi.render();
 Lana.render();
 
 Tamara.render();
+clickGet().render();
