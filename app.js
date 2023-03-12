@@ -99,51 +99,34 @@ let form = document.getElementById("Einformatiom");
 
 form.addEventListener("submit", clickGet);
 function clickGet() {
-  const formData = new FormData(form);
 
-  const output = document.getElementById("output");
+  let nameFull = document.getElementById("Ename").value;
 
-  let nameFull = document.getElementById("Ename");
-  document.write("Name: " + nameFull.value);
+  let departmentS = document.getElementById("Edepartment").value;
+
+  let levelS = document.getElementById("Elevel").value;
+
+  let imageE = document.getElementById("Eimage").value;
+
+
+
+  const formData = new Employee( );
+
+  // const output = document.getElementById("output");
+
+ 
+let 
+
+//  console.log("Name: " + nameFull);
 
   // let personalImg1= document.getElementById("Eimage");
   // document.write("Image URL: "+ personalImg1.value );
 
-  for (const [key, value] of formData) {
-    document.write((output.textContent = `  ${key}: ${value}  `));
-  }
+  // for (const [key, value] of formData) {
+  //   document.write((output.textContent = `  ${key}: ${value}  `));
+  // }
 
-  //   let cardIn= document.createElement("div");
-  //   document.body.appendChild(cardIn);
-
-  //   cardIn.style.backgroundColor= "rgba(65, 11, 46, 0.19)";
-  //   cardIn.style.display='inline-block'
-  //   cardIn.style.width= '200px';
-  //   cardIn.style.borderColor='black';
-  //   cardIn.style.margin='30px'
-  //   cardIn.style.padding='10px'
-  //   cardIn.style.display='inline-block';
-  //   cardIn.style.borderRadius='5px';
-
-  //   let cardimg1 = document.createElement("img");
-  //   let cardname1 = document.createElement("p");
-  //   let cardL1 = document.createElement("p");
-  //   let cardepartment1 = document.createElement("p");
-
-  //   let personalImg= document.getElementById("Eimage");
-  //   let nameFull= document.getElementById("Ename");
-  //   let departmentSelect= document.getElementById("Edepartment");
-  //   let leveltSelect= document.getElementById("Elevel");
-
-  //   cardimg1.src= personalImg.value ;
-  //   cardname1.textContent= nameFull.value;
-  //   cardL1.textContent= leveltSelect.value;
-  //   cardepartment1.textContent= departmentSelect.value;
-
-  // cardIn.appendChild(cardimg1);
-  // cardIn.appendChild(cardname1);
-  // cardIn.appendChild(cardL1);
-  // cardIn.appendChild(cardepartment1);
+ 
 }
 
 
