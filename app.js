@@ -189,7 +189,7 @@ Employee.prototype.render = function () {
 
   cardimg.src = this.image;
   cardname.textContent = "Name: " + this.name;
-  cardid.textContent = "Id:" + this.id;
+  cardid.textContent = "Id:" + employeeId();
   cardepartment.textContent = "Department: " + this.department;
   cardlevel.textContent = "Level: " + this.level;
   cardsalary.textContent = "Salary: " + this.netSalary();
