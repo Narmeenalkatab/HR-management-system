@@ -1,7 +1,7 @@
 /* employee object  constructor   */
 
 //hitest
-const webEmployee = [];
+let webEmployee = [];
 
 function Employee(id, name, department, level, image, salary) {
   this.id = id;
@@ -92,7 +92,7 @@ function employeeId() {
     return this.id;
   }
 }
-
+// let employeeId1=employeeId();
 ///////////////////////////////////////////////////////
 
 
@@ -116,6 +116,7 @@ container.style.display = "inline-block";
 container.style.borderRadius = "20px";
 
 //Card function
+
 Employee.prototype.render = function () {
   let card = document.createElement("div");
 
@@ -138,6 +139,10 @@ Employee.prototype.render = function () {
   let cardsalary = document.createElement("p");
 
   cardimg.src = this.image;
+cardimg.style.width="160px";
+cardimg.style.height="160px";
+
+
   cardname.textContent = "Name: " + this.name;
   cardid.textContent = "Id:" + employeeId();
   cardepartment.textContent = "Department: " + this.department;
@@ -168,26 +173,24 @@ form.addEventListener("submit", clickGet);
 
 function clickGet(event) {
   event.preventDefault();
-console.log("jjj")
   let nameFull = (event.target.Ename.value);
 
   let departmentS = (event.target.Edepartment.value);
 
   let levelS = (event.target.Elevel.value);
 
-  let imageE = (event.target.Eimage.value);
-
-console.log(employeeId(),nameFull ,departmentS, levelS ,imageE);
+ let imageE = (event.target.Eimage.value);
 
  let formData = new Employee( employeeId(),nameFull ,departmentS, levelS ,imageE   );
 
-  
+
 formData.render();
+
+saveData(webEmployee);
  
 }
 
-
-
+// console.log(webEmployee);
 
 
 
@@ -201,3 +204,46 @@ Hadi.render();
 Lana.render();
 
 Tamara.render();
+
+
+//lab9 : localStorage
+// localStorage.clear();
+
+function renderAll(){
+
+  for (i=0; i< webEmployee.length; i++){
+
+    webEmployee[i].render();
+  }
+}
+// renderAll();
+
+
+//save array data 
+function saveData(data){
+let stringData=JSON.stringify(data);
+  localStorage.setItem('Employee',stringData)
+}
+// saveData(webEmployee);
+
+// console.log(webEmployee);
+
+
+function getData (){
+
+  
+ let allArr= localStorage.getItem('Employee');
+
+ let parData= JSON.parse(allArr);
+
+ if (parData != null){   
+ for (let i=0; i< parData.length; i++){
+
+   new Employee( parData[i].id, parData[i].name, parData[i].department, parData[i].level, parData[i].image, parData[i].salary );
+  }
+  }
+  
+  renderAll()
+}
+
+getData();
