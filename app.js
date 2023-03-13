@@ -1,6 +1,6 @@
 /* employee object  constructor   */
-"use strict";
 
+//hitest
 const webEmployee = [];
 
 function Employee(id, name, department, level, image, salary) {
@@ -10,6 +10,7 @@ function Employee(id, name, department, level, image, salary) {
   this.level = level;
   this.image = image;
   this.salary = 0;
+  // this.netSalary=this.salary;
   webEmployee.push(this);
 }
 
@@ -34,7 +35,7 @@ let Tamara = new Employee(
   "Tamara Ayoub",
   "Marketing",
   "Senior",
-  "./assest/w2.png"
+  "./assest/w2.jpg"
 );
 
 let Safi = new Employee(
@@ -84,20 +85,119 @@ Employee.prototype.netSalary = function () {
   return this.salary;
 };
 
-function salary1() {
+function employeeId() {
   for (let i = 0; i < webEmployee.length; i++) {
-    webEmployee[i].netSalary();
-    webEmployee[i].render();
+    let randomId = Math.floor(Math.random() * 9000 + 1000);
+    this.id = randomId;
+    return this.id;
   }
 }
 
-Employee.prototype.render = function () {
-  console.log("hello");
-  {
-    document.write(`<h1>${this.name}</h1>`);
+///////////////////////////////////////////////////////
 
-    document.write(`<h2>${this.salary}</h2>`);
-  }
+
+
+let container = document.createElement("div");
+document.body.appendChild(container);
+
+let h1El = document.createElement("h1");
+h1El.textContent = "Employee Cards";
+container.appendChild(h1El);
+h1El.style.paddingTop = "20px";
+h1El.style.color = "rgba(24, 32, 65, 0.5)";
+
+container.style.backgroundImage = "url(./assest/bbck.jpg)";
+container.style.width = "800px";
+container.style.marginLeft = "70px";
+container.style.marginTop = "-300px";
+container.style.marginBottom = "100PX";
+container.style.textAlign = "center";
+container.style.display = "inline-block";
+container.style.borderRadius = "20px";
+
+//Card function
+Employee.prototype.render = function () {
+  let card = document.createElement("div");
+
+  card.style.backgroundColor = "rgba(65, 11, 46, 0.19)";
+  card.style.display = "inline-block";
+  card.style.width = "200px";
+
+  card.style.borderColor = "black";
+  card.style.margin = "30px";
+  card.style.padding = "10px";
+  card.style.display = "inline-block";
+  card.style.borderRadius = "5px";
+  card.style.fontFamily = "";
+
+  let cardimg = document.createElement("img");
+  let cardname = document.createElement("p");
+  let cardid = document.createElement("p");
+  let cardepartment = document.createElement("p");
+  let cardlevel = document.createElement("p");
+  let cardsalary = document.createElement("p");
+
+  cardimg.src = this.image;
+  cardname.textContent = "Name: " + this.name;
+  cardid.textContent = "Id:" + employeeId();
+  cardepartment.textContent = "Department: " + this.department;
+  cardlevel.textContent = "Level: " + this.level;
+  cardsalary.textContent = "Salary: " + this.netSalary();
+
+  card.appendChild(cardimg);
+
+  card.appendChild(cardname);
+  card.appendChild(cardid);
+  card.appendChild(cardepartment);
+
+  card.appendChild(cardlevel);
+
+  card.appendChild(cardsalary);
+
+  container.appendChild(card);
 };
 
-salary1();
+
+
+
+let form = document.getElementById("Einformatiom");
+// let submit = document.getElementById("submit");
+
+
+form.addEventListener("submit", clickGet);
+
+function clickGet(event) {
+  event.preventDefault();
+console.log("jjj")
+  let nameFull = (event.target.Ename.value);
+
+  let departmentS = (event.target.Edepartment.value);
+
+  let levelS = (event.target.Elevel.value);
+
+  let imageE = (event.target.Eimage.value);
+
+console.log(employeeId(),nameFull ,departmentS, levelS ,imageE);
+
+ let formData = new Employee( employeeId(),nameFull ,departmentS, levelS ,imageE   );
+
+  
+formData.render();
+ 
+}
+
+
+
+
+
+
+Ghazi.render();
+Safi.render();
+
+Omar.render();
+Rana.render();
+
+Hadi.render();
+Lana.render();
+
+Tamara.render();
