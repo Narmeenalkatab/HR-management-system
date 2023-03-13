@@ -95,27 +95,6 @@ function employeeId() {
 
 ////////////////////////////////////////////////////
 
-let form = document.getElementById("Einformatiom");
-
-form.addEventListener("submit", clickGet);
-function clickGet() {
-
-  let nameFull = document.getElementById("Ename").value;
-
-  let departmentS = document.getElementById("Edepartment").value;
-
-  let levelS = document.getElementById("Elevel").value;
-
-  let imageE = document.getElementById("Eimage").value;
-
-
-
-  const formData = new Employee( employeeId(),nameFull ,departmentS, levelS ,imageE   );
-
-  
-return  formData ;
- 
-}
 
 
 let container = document.createElement("div");
@@ -178,6 +157,40 @@ Employee.prototype.render = function () {
   container.appendChild(card);
 };
 
+
+
+
+let form = document.getElementById("Einformatiom");
+// let submit = document.getElementById("submit");
+
+
+form.addEventListener("submit", clickGet);
+
+function clickGet(event) {
+  event.preventDefault();
+console.log("jjj")
+  let nameFull = (event.target.Ename.value);
+
+  let departmentS = (event.target.Edepartment.value);
+
+  let levelS = (event.target.Elevel.value);
+
+  let imageE = (event.target.Eimage.value);
+
+console.log(employeeId(),nameFull ,departmentS, levelS ,imageE);
+
+ let formData = new Employee( employeeId(),nameFull ,departmentS, levelS ,imageE   );
+
+  
+formData.render();
+ 
+}
+
+
+
+
+
+
 Ghazi.render();
 Safi.render();
 
@@ -188,4 +201,3 @@ Hadi.render();
 Lana.render();
 
 Tamara.render();
-clickGet().render();
