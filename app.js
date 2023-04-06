@@ -192,17 +192,12 @@ saveData(webEmployee);
 
 // console.log(webEmployee);
 
-
-
 Ghazi.render();
 Safi.render();
-
 Omar.render();
 Rana.render();
-
 Hadi.render();
 Lana.render();
-
 Tamara.render();
 
 
@@ -237,6 +232,7 @@ function getData (){
  let parData= JSON.parse(allArr);
 
  if (parData != null){   
+  webEmployee=[];
  for (let i=0; i< parData.length; i++){
 
    new Employee( parData[i].id, parData[i].name, parData[i].department, parData[i].level, parData[i].image, parData[i].salary );
