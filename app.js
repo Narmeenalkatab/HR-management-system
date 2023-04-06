@@ -101,3 +101,6 @@ Employee.prototype.render = function () {
 };
 
 salary1();
+
+
+
