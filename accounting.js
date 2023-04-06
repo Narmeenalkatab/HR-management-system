@@ -39,6 +39,7 @@ function getData() {
 }
 
 //Number and Salary of employees in each department.
+//123
 
 function departmeintNumber() {
   for (let i = 0; i < arrayE.length; i++) {
